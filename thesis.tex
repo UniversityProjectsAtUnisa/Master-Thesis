@@ -55,9 +55,9 @@
 \frontmatter
 
 % abstract if needed
-% \begin{abstract}
-%     \input{content/abstract.tex}
-% \end{abstract}
+\begin{abstract}
+    \input{content/abstract.tex}
+\end{abstract}
 
 % to create blank pages for openright in frontmatter
 % use one of the following two methods
@@ -68,12 +68,12 @@
 % 2) or
 \paginavuota % to manually create a blank page
 
-\sommario
-\input{content/summary}
+% \sommario
+% \input{content/summary}
 
-\phantom{0}
-\cleardoublepage
-\thispagestyle{empty}
+% \phantom{0}
+% \cleardoublepage
+% \thispagestyle{empty}
 
 \ringraziamenti % acknowledgements
 \input{content/acknowledgements}
@@ -116,8 +116,6 @@
 
 \phantom{0}
 \cleardoublepage
-\Urlmuskip=0mu plus 1mu\relax
-\bibliographystyle{plain}
 \printbibliography[heading=bibintoc] % heading required to show it in ToC
 
 \end{document}

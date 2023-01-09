@@ -1,5 +1,6 @@
 % configuration for glossaries
 % convert and load converted glossaries in .tex ,format from .bib
+\setabbreviationstyle[acronym]{long-short} % style before loading resources
 \setabbreviationstyle{long-short-desc} % style before loading resources
 % this command sets the style to title for long names of acronyms only in the glossary description, leading to capitalized first-letter for all words
 % \glssetcategoryattribute{\glsxtrabbrvtype}{glossname}{capitalisewords} % doesn't work
@@ -97,3 +98,6 @@
 \setcounter{biburllcpenalty}{9000}
 % If you want to break on URL UPPER CASE letters
 \setcounter{biburlucpenalty}{9000}
+\AtEveryBibitem{%
+  \clearfield{note}%
+}
