@@ -36,12 +36,13 @@
 \hfill
 %
 \begin{minipage}[t]{.375\textwidth}\raggedleft
-\begin{adjustbox}{width={\textwidth},totalheight={\textheight},keepaspectratio} % with adjustbox it adapts to the lengths of the names, remove it if you want the same font dimension
-\begin{tabular}[t]{@{}l@{}}
-    \fixednamesfont \textbf{\thesiscandidatetext} \\
-    \namesfont \thesiscandidatename~\MakeUppercase{\thesiscandidatesurname}
-\end{tabular}
-\end{adjustbox}
+    \begin{adjustbox}{width={\textwidth},totalheight={\textheight},keepaspectratio} % with adjustbox it adapts to the lengths of the names, remove it if you want the same font dimension
+    \begin{tabular}[t]{@{}l@{}}
+        \fixednamesfont \textbf{\thesiscandidatetext} \\
+        \namesfont \thesiscandidatename~\MakeUppercase{\thesiscandidatesurname}\\
+        % \namesfont \serialnumber
+    \end{tabular}
+    \end{adjustbox}
 \end{minipage}\hfill\null}\\
 %
 \vspace{\stretch{5}}

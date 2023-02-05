@@ -1,16 +1,6 @@
 \chapter{Detailed analysis of the state-of-art} \label{cpt:state-of-art}
 
-This chapter will present a detailed analysis of the state-of-the-art in epileptic seizure prediction. Our study will be comprised of four main sections.
-
-\begin{enumerate}
-    \item Epileptic Seizure Detection and Prediction Techniques: In this section, the most important techniques for predicting and detecting epileptic seizures will be reviewed. Both traditional and modern approaches will be examined, including machine learning algorithms and artificial neural networks.
-
-    \item Datasets: In this section, the most important datasets containing \gls{EEG} data from patients with epilepsy will be introduced. These datasets are essential for training algorithms for epileptic seizure detection and prediction.
-
-    \item Deep Anomaly Detection: In this section, the most important techniques for deep anomaly detection will be explored. This is a promising approach for epileptic seizure prediction, and its potential applications in this context will be discussed.
-
-    \item Identification of possible advancements concerning the state-of-art: This section will focus on the potential areas where progress or improvements could be made in relation to the current state of the art.
-\end{enumerate}
+This chapter will present a detailed analysis of the state-of-the-art in epileptic seizure prediction.
 
 \section{Epileptic Seizure Detection and Prediction Techniques}
 This section is not focused only on seizure prediction techniques. Instead seizure detection and prediction researches are analyzed as a whole, for various reasons \cite{gadhoumi_seizure_2016, bou_assi_towards_2017, natu_review_2022}:
@@ -326,16 +316,6 @@ The works that have been taken into consideration use the following metrics:
     \item $\overline{t}_p$ is the average prediction time in seconds
     \item $t_p^m$ is the minimum prediction time in seconds
     \item $t_p^M$ is the maximum prediction time in seconds
-    \item $\glsentryshort{Imb}$ (\glsentrylong{Imb}) is the percentage of preictal windows w.r.t. the total number of windows
-    \item $\glsentryshort{PPV}$ (\glsentrylong{PPV}) is the precision in windows classification, computed as
-        \begin{equation}
-            \frac{TP}{FP+TP}
-        \end{equation}
-
-    \item $\glsentryshort{BPPV}$ (\glsentrylong{BPPV}) is a balanced version of the previous metric, computed as
-        \begin{equation}
-            \frac{\frac{TP}{P}}{\frac{FP}{N}+\frac{TP}{P}}
-        \end{equation}
 \end{itemize}
 
 $\overline{t}_p$, $t_p^m$ and $t_p^M$ only consider the first window labaled as preictal among the windows obtained from the seizure record.
@@ -459,38 +439,6 @@ With an average $pred\%$ of 100\% it looks like the classifier should be able to
     \end{tabular}
     \caption{Seizure instance-wise performance of the traditional classification algorithm on \glsentrylong{CHB-MIT} dataset \cite{detti_patient-specific_2019}}
     \label{tab:siena-performance-seizure-sequence} 
-\end{table}
-
-In Table \ref{tab:siena-performance-windows} results are shown that represents the precision per window.
-
-\begin{table}[ht]
-    \centering
-    \begin{tabular}{c|rrr}
-    Pat.  & $PPV$   & $BPPV$  & $Imb.$  \\ \hline
-    chb01 & 11.36 & 76.51 & 3.91  \\
-    chb03 & 33.14 & 94.65 & 4.19  \\
-    chb04 & 1.32  & 82.23 & 0.58  \\
-    chb05 & 100   & 100   & 2.83  \\
-    chb06 & 4.12  & 46.35 & 4.95  \\
-    chb07 & 36.54 & 98.93 & 0.93  \\
-    chb08 & 26.07 & 86.05 & 5.65  \\
-    chb09 & 5.63  & 88.92 & 1.48  \\
-    chb10 & 100   & 100   & 3.54  \\
-    chb12 & 5.83  & 31.07 & 13.52 \\
-    chb13 & 12.11 & 41.21 & 19.12 \\
-    chb14 & 5.21  & 60.48 & 7.15  \\
-    chb15 & 18.58 & 70.85 & 9.32  \\
-    chb16 & 9.75  & 59.31 & 7.30  \\
-    chb17 & 12.60 & 81.61 & 3.21  \\
-    chb18 & 55.67 & 98.33 & 3.19  \\
-    chb20 & 1.87  & 49.03 & 3.94  \\
-    chb21 & 19.69 & 90.55 & 2.54  \\
-    chb22 & 90    & 99.85 & 1.97  \\
-    chb23 & 21.44 & 84.77 & 9.73  \\ \hline
-    Av.   & 28.55 & 77.04 & 5.45  \\ \hline
-    \end{tabular}
-    \caption{Windows-wise performance of the traditional classification algorithm on \glsentrylong{CHB-MIT} dataset \cite{detti_patient-specific_2019}}
-    \label{tab:siena-performance-windows} 
 \end{table}
 
 Please note that this is one of the most recent and performing works in the field of epileptic seizure prediction but is still objectively unusable to improve the everyday life of a patient suffering from epilepsy.
