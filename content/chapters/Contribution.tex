@@ -6,7 +6,7 @@ The methodology proposed in this work consists in evaluating the application of 
 
 In the first case the network, which is already an autoencoder applied for epileptic seizure detection, will be optimized and trained and tested for epileptic seizure prediction. The results will be then compared to those achieved by the work described in section \ref{subsec:refwork-siena} which was found to be one of the best performing experiment in the overall state-of-art.
 
-In the second case the model used is a deep \gls{CNN} which was trained in a common supervised training setup, achieving results which are comparable to the state of the art, which are those obtained in the work of section \ref{subsec:refwork-siena}, as previously stated. An unsupervised anomaly detection adaptation of such work is presented, using the first layers of those pretrained models to translate the records in a smaller latent space that will than be submitted to a \gls{OC-SVM} classifier that should be able to generalize the meaning of normality/anormality in the subspace.
+In the second case the model used is a deep \gls{CNN} which was trained in a common supervised training setup, achieving results which are comparable to the state of the art, which are those obtained in the work of section \ref{subsec:refwork-siena}, as previously stated. An unsupervised anomaly detection adaptation of such work is presented, using the first layers of those pre-trained models to translate the records in a smaller latent space that will than be submitted to a \gls{OC-SVM} classifier that should be able to generalize the meaning of normality/abnormality in the subspace.
 
 \subsection{Data grouping} \label{subsec:data-grouping}
 In both cases the data used to train each instance of a model will be specifically selected to simulate real life scenarios of application of the network. These approaches according to which the experiment were conducted are patient specific, patient generic and inter-patient.
@@ -22,13 +22,12 @@ The patient generic approach is associated to a scenario that would imagine the 
 In this case the model would be trained on a fairly higher amount of recordings when compared to those available in the patient specific case, being the data gathered from multiple sources. Nonetheless, the model could be unable to learn a normality representation that is a good fit for the interested patient.
 
 \subsubsection{Inter-patient}
-The inter-patient approach is the only one that can be applied to both the networks in section \ref{subsec:refwork-uab} and \ref{subsec:refwork-unisa}, since in the second case the models used would pretrained with common supervised systems. 
-This approach would take the patient generic one a step further by also including ideas from the patient specific scenario. In fact, the interested patient would receive an headset pretrained on data from many different sources, but the disadvantages would be mitigated by a second training phase, limiting the training data to those gathered from the current patient.
+The inter-patient approach is the only one that can be applied to both the networks in section \ref{subsec:refwork-uab} and \ref{subsec:refwork-unisa}, since in the second case the models used would pre-trained with common supervised systems. 
+This approach would take the patient generic one a step further by also including ideas from the patient specific scenario. In fact, the interested patient would receive an headset pre-trained on data from many different sources, but the disadvantages would be mitigated by a second training phase, limiting the training data to those gathered from the current patient.
 
 Ideally this method should be the best fit for a real world application, being it expected to perform better than the two previous methods when taken separately.
 
 \subsection{Desired results}
-% massimizzare specificity per minimizzare worrying time percentage max e average
 In order to objectively determine the outcome of the experiments a clear assessment of the desired performance becomes mandatory.
 It should be clear that close to state-of-art results would mean a successful application of the unsupervised anomaly techniques to the field of epileptic seizure prediction, but this would hardly translate to a possible usage of such technologies to real world scenarios unless those results are put in perspective.
 
@@ -55,11 +54,11 @@ A desirable result would numerically be summarized by the following constraints:
 The prediction accuracy is estimated to be of secondary importance because a system that does not satisfy the previous goals is unusable in principle. Nevertheless, achieving non-zero prediction accuracy is still, of course, mandatory.
 
 \section{Methodological innovations}
-In my thesis, I introduce several methodological innovations in the field of epileptic seizure prediction. 
+In this thesis, several methodological innovations in the field of epileptic seizure prediction were introduced. 
 
 One of the key contributions is the application of unsupervised deep anomaly detection techniques to this area of research. This approach is novel and has the potential to ease some of the problems that affect standard supervised techniques, such as the gathering of data. 
 
-Additionally, I propose the use of different data grouping methods, such as patient-specific and patient-generic, to simulate real-life situations. The idea of inter-patient, which consists of refining models obtained from the patient-generic method, is an original idea that also has the potential to overcome the challenges of applying these findings in real-life situations. 
+Additionally, the use of different data grouping methods were proposed, such as patient-specific and patient-generic, to simulate real-life situations. The idea of inter-patient, which consists of refining models obtained from the patient-generic method, is an original idea that also has the potential to overcome the challenges of applying these findings in real-life situations. 
 
 Another innovation is the use of models from slightly different scenarios that are known to work, as a way to evaluate more accurately the feasibility of applying this method. 
 

@@ -8,7 +8,7 @@ This section is not focused only on seizure prediction techniques. Instead seizu
 \begin{itemize}
     \item lack of researches and publications strictly on seizure prediction 
     \item higher difficulty in separating preictal \gls{EEG} signals from interictal ones
-    \item techniques that are more efficient in seizure detection generally grant higher performances for seizure prediction aswell
+    \item techniques that are more efficient in seizure detection generally grant good results for seizure prediction aswell
 \end{itemize}
 
 With these premises in mind, what follows is an overview of the best methods and techniques for seizure detection and prediction.
@@ -25,7 +25,7 @@ In time different approaches for seizure detection and prediction have been used
 \end{figure}
 
 \subsection{Traditional analysis methods and feature extraction}
-During the 1970s, EEG analysis involved the interpretation of \gls{EEG} waveforms using subjective and intuitive methods \cite{callaway_coupling_1974}. Over time, a variety of techniques have been developed to analyze subtle changes in the \gls{EEG} signal and have often been used for epileptic seizure detection and prediction \cite{natu_review_2022}. These methods can be broadly classified into four categories: time domain analysis, frequency domain analysis, time-frequency domain analysis, and nonlinear methods \cite{acharya_automated_2013}.
+During the 1970s, \gls{EEG} analysis involved the interpretation of \gls{EEG} waveforms using subjective and intuitive methods \cite{callaway_coupling_1974}. Over time, a variety of techniques have been developed to analyze subtle changes in the \gls{EEG} signal and have often been used for epileptic seizure detection and prediction \cite{natu_review_2022}. These methods can be broadly classified into four categories: time domain analysis, frequency domain analysis, time-frequency domain analysis, and nonlinear methods \cite{acharya_automated_2013}.
 
 Depending on how many channels are involved in each feature extraction method, they can be distinguished in:
 \begin{itemize}
@@ -155,7 +155,7 @@ The dataset also includes vagal nerve stimulus signals and separate file names a
 \subsubsection{Bern-Barcelona EEG database}
 This multi-channel \gls{EEG} database includes \gls{EEG} recordings from five patients with epilepsy, who underwent surgery in an attempt to achieve seizure freedom \cite{andrzejak_nonrandomness_2012}. 
 
-The data includes both focal and non-focal \gls{EEG} and was recorded using specialized electrodes at a sampling rate of either 512 or 1024 Hz, depending on the number of channels used in the \gls{EEG} system. Each file includes approximately 10,240 samples over a 20 second time period.
+The data includes both focal and non-focal \gls{EEG} and was recorded using specialized electrodes at a sampling rate of either 512 or 1024 Hz, depending on the number of channels used in the \gls{EEG} system. Each file includes approximately 10240 samples over a 20 second time period.
 
 \subsubsection{American Epilepsy Society Seizure Prediction Challenge database}
 This database consists of intracranial \gls{EEG} segments recorded from dogs and humans with various characteristics such as sampling rate, duration of \gls{EEG} recordings, and number of electrodes \cite{howbert_forecasting_2014}. It was released as part of a Kaggle challenge hosted by the American Epilepsy Society in 2014 for the development of seizure forecasting systems, and it was used by 504 teams. 
@@ -163,7 +163,7 @@ This database consists of intracranial \gls{EEG} segments recorded from dogs and
 The database includes different seizure segments, including ictal, pre-ictal, post-ictal, and inter-ictal, which are provided in MATLAB files. The database is approximately 105 GB in size and includes additional annotated \gls{EEG} data provided by the University of Pennsylvania and the Mayo Clinic.
 
 \subsubsection{\glsentrylong{TUH-EEG} corpus}
-The Temple University \gls{EEG} corpus is the largest collection of freely available \gls{EEG} data used for the diagnosis of epilepsy and different types of seizures \cite{obeid_temple_2016}. It includes data collected from 2000 to 2013 from around 10,874 patients in various clinical settings. 
+The Temple University \gls{EEG} corpus is the largest collection of freely available \gls{EEG} data used for the diagnosis of epilepsy and different types of seizures \cite{obeid_temple_2016}. It includes data collected from 2000 to 2013 from around 10874 patients in various clinical settings. 
 
 The community behind this corpus has also developed various tools and software products for the analysis and annotation of \gls{EEG}, \gls{EMG}, and \gls{ECG} data, including an \gls{EDF} browser that allows users to view \gls{EEG} recordings in video form. Within the corpus, there are several different datasets available, including the \gls{IBMFT}, the \gls{TUH-EEG} epilepsy corpus, seizure corpus, slowing corpus, and events corpus.
 
@@ -180,7 +180,7 @@ This dataset was created for the purpose of developing a predictive model for ep
 However, it addresses some of the limitations of the University of Bonn dataset, such as using different \gls{EEG} recording methods (intracranial and scalp) for healthy and epileptic patients. All of the data in this dataset were collected exclusively using surface \gls{EEG} electrodes from 15 healthy and epileptic patients.
 
 \subsubsection{Siena Scalp EEG Database}
-The Siena Scalp EEG database includes \gls{EEG} recordings from 14 epileptic patients (9 males and 5 females), which were collected using specialized amplifiers and reusable electrodes \cite{detti_eeg_2020, detti_paolo_siena_2020}. The signals were recorded at a sampling rate of 512 Hz and stored in EDF files. The data was collected at the University of Siena in Italy as part of a national interdisciplinary research project focused on seizure prediction, project PANACEE. 
+The Siena Scalp EEG database includes \gls{EEG} recordings from 14 epileptic patients (9 males and 5 females), which were collected using specialized amplifiers and reusable electrodes \cite{detti_eeg_2020, detti_paolo_siena_2020}. The signals were recorded at a sampling rate of 512 Hz and stored in \gls{EDF} files. The data was collected at the University of Siena in Italy as part of a national interdisciplinary research project focused on seizure prediction, project PANACEE. 
 
 The database includes 47 seizures from 128 hours of video \gls{EEG} recordings, and also includes the start and end times of seizures and the list of electrodes used during the recordings. The data includes three types of seizures: focal onset with and without impaired awareness, and focal to bilateral tonic-clonic seizures.
 
@@ -200,12 +200,12 @@ Secondly, the labels provided in the dataset needed to be suitable for my specif
 
 Additionally, the dataset needed to contain sufficient data for deep learning training. This was crucial in order to ensure that the machine learning models used in my research would be able to accurately classify the \gls{EEG} signals.
 
-Furthermore, the dataset needed to contain scalp EEG recording for its potential practical applications rather than \gls{iEEG}, which is invasive and requires surgery.
+Furthermore, the dataset needed to contain scalp \gls{EEG} recording for its potential practical applications rather than \gls{iEEG}, which is invasive and requires surgery.
 
 Finally, it was important for the dataset to have been used in published works that are similar to mine in order to perform more accurate comparisons in my research. The use of a dataset with a proven track record in similar studies provided a strong foundation for my own work.
 
 \subsubsection{Potential alternatives}
-In considering alternative datasets for my research, I initially considered the Siena Scalp EEG Database and the \gls{TUH-EEG} corpus. Ultimately, I decided to use the \gls{CHB-MIT} dataset for several reasons. One reason was the size of the dataset; the Siena dataset, while containing useful data, was relatively small with only around 100 hours of \gls{EEG} recordings from 14 patients. On the other hand, the \gls{TUH-EEG} corpus was significantly larger with over 500 GB of data, but was unfortunately not available for use at the time of my research.
+In considering alternative datasets for my research, the Siena Scalp EEG Database and the \gls{TUH-EEG} corpus were initially selected. Ultimately, the \gls{CHB-MIT} dataset was chosen for several reasons, first of which the size of the dataset: the Siena dataset, while containing useful data, was relatively small with only around 100 hours of \gls{EEG} recordings from 14 patients. On the other hand, the \gls{TUH-EEG} corpus was significantly larger with over 500 GB of data, but was unfortunately not available for use at the time of my research.
 
 Finally, the choice of \gls{CHB-MIT} dataset was also justified by the fact that it had been used in published research that was similar to my own, allowing me to make more accurate comparisons. 
 
@@ -320,7 +320,7 @@ The works that have been taken into consideration use the following metrics:
 
 $\overline{t}_p$, $t_p^m$ and $t_p^M$ only consider the first window labaled as preictal among the windows obtained from the seizure record.
 
-Furthermore, other utility metrics have been introduced in this work to simplify the discussion around the quality of the results and the characteristics of expected ones. These metrics are
+Furthermore, other heuristic metrics have been introduced in this work to simplify the discussion around the quality of the results and the characteristics of expected ones. These metrics are
 
 \begin{itemize}
     \item $\glsentryshort{IFP}$ (\glsentrylong{IFP}) is the average time between two false positive detections, in seconds, computed as
@@ -358,7 +358,7 @@ It presents a patient specific approach for the prediction of epileptic seizures
 \subsubsection{Feature extraction}
 The feature extraction from \gls{EEG} signals used in this work includes the following steps:
 \begin{enumerate}
-    \item The EEG signals are filtered using a pass-band FIR filter with band [8-13] \unit{Hz}.
+    \item The \gls{EEG} signals are filtered using a pass-band \gls{FIR} filter with band [8-13] \unit{Hz}.
     \item The time-derivative of the signals is computed to make the noise nearly flat and sharpen the regions where seizures occur.
     \item The analytical signals and their phases are extracted using the Hilbert transform.
     \item The signals are segmented into consecutive overlapping time windows. 
@@ -405,9 +405,9 @@ Following there are two tables of results claimed by the authors.
 In Table \ref{tab:siena-performance-seizure-sequence} results are reported that are directly associated with the possibility of a direct application of this classifier to a patient.
 With an average $pred\%$ of 100\% it looks like the classifier should be able to detect every incoming seizure, but there are two important considerations to be made:
 \begin{itemize}
-    \item the average $spec\%$ is 95.97\%, which, when put in perspective with its window length of 6 seconds and 1 second of overlap, gives an \gls{IFP} of about 124 seconds.
+    \item the average $spec\%$ is 95.97\%, which, when put in perspective with its \gls{WD} of 6 seconds and 1 second of \gls{WO}, gives an \gls{IFP} of about 124 seconds.
     \item the average $\overline{t}_p$ is about 79 seconds, which, when combined with the \gls{IFP} calculated above, gives a $\overline{t}_w\%$ of 64\%
-    \item arguably $t_w^M$ is more interesting than $\overline{t}_w\%$, but in this case exceeds 100\%, reaching more accurately about 122\%.
+    \item arguably $t_w^M\%$ is more interesting than $\overline{t}_w\%$, but in this case exceeds 100\%, reaching more accurately about 122\%.
     \item the average $t_p^m$ is about 10 seconds, but is 0 for many patients.
 \end{itemize}
 
@@ -488,7 +488,7 @@ Given that the model was only trained using normal instances, it was not necessa
 
 The training method is \textit{patient generic} which means that only 1 classifier was trained using normal instances from all patients. The remaining normal instances and every seizure instances not discarded during the data preparation phase was included in the test set.
 
-As previously mentioned, the neural network was trained to maximize quality of reconstruction, with the idea that records containing anomalies would be harder to reconstruct during the test phase. For this reason a threshold was found with the aim of getting the best possibile separation between normal and anomalous samples. If the \gls{MSE} between the input and the output records is below the threshold, then the record is labeled as interictal, otherwise is labeled as preictal.
+As previously mentioned, the neural network was trained to maximize quality of reconstruction, with the idea that records containing anomalies would be harder to reconstruct during the test phase. For this reason a threshold was found with the aim of getting the best possible separation between normal and anomalous samples. If the \gls{MSE} between the input and the output records is below the threshold, then the record is labeled as interictal, otherwise is labeled as preictal.
 
 Such threshold is obtained on the training set applying the Otsu's method. Although it is not a suitable application for this algorithm, since it would normally require two classes, it achieved the desired result.
 
@@ -523,7 +523,7 @@ It shares some preliminary operations with the study from \gls{UNISI} while even
 \subsubsection{Feature extraction} \label{subsub:refwork-unisa-featext}
 The feature extraction from \gls{EEG} signals used in this work shares the first two steps with the work from \ref{subsec:refwork-siena}:
 \begin{enumerate}
-    \item The EEG signals are filtered using a pass-band FIR filter with band [8-13] \unit{Hz}.
+    \item The \gls{EEG} signals are filtered using a pass-band \gls{FIR} filter with band [8-13] \unit{Hz}.
     \item The time-derivative of the signals is computed to make the noise nearly flat and sharpen the regions where seizures occur.
 \end{enumerate}
 
@@ -607,10 +607,10 @@ In the patient specific results, some patients are missing for the same reason d
 
 In this case the reported results where almost on par with those shown in Section \ref{subsub:refwork-siena-results}: this time the average $pred\%$ also is 100\%, indicating that every incoming seizure should be successfully detected, but subtle differences are present:
 \begin{itemize}
-    \item the average $spec\%$ is 97.97\%, which, when put in perspective with its window length of 6 seconds and 5 second of overlap, gives an \gls{IFP} of about 49 seconds. In the original work only the window length was considered to compute the \gls{IFP}; even tho this measure gives a much more generous result of 296 seconds, it is unclear if with a different overlap the achieved prediction accuracy would still be 100\%.
+    \item the average $spec\%$ is 97.97\%, which, when put in perspective with its \gls{WD} of 6 seconds and 5 second of \gls{WO}, gives an \gls{IFP} of about 49 seconds. In the original work only the \gls{WD} was considered to compute the \gls{IFP}; even tho this measure gives a much more generous result of 296 seconds, it is unclear if with a different overlap the achieved prediction accuracy would still be 100\%.
     For comparison purposes an \gls{IFP} of 296 will be considered despite such uncertainty.
     \item the average $\overline{t}_p$ is about 247 seconds, which, when combined with the \gls{IFP} calculated above, gives a $\overline{t}_w\%$ of 84\%
-    \item In this case the $t_w^M$ does not exceed 100\%, stopping at about 97\%.
+    \item In this case the $t_w^M\%$ does not exceed 100\%, stopping at about 97\%.
     \item the average $t_p^m$ is about 211, which is much higher than the one presented in section \ref{subsub:refwork-siena-results}, with minimums around the 40 seconds mark.
 \end{itemize}
 
@@ -652,7 +652,7 @@ The average $pred\%$ is about 83\%, indicating that \textit{not} every incoming 
 \begin{itemize}
     \item the average $spec\%$ is 90.59\%, is associated to an \gls{IFP} of about 64 seconds.
     \item the average $\overline{t}_p$ is about 215 seconds, associated with an $\overline{t}_w\%$ of 336\%
-    \item the average $t_w^M$ is 428\%.
+    \item the average $t_w^M\%$ is 428\%.
     \item the average $t_p^m$ is about 147, with minimums even below the 30 seconds mark.
 \end{itemize}
 

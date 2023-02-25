@@ -10,13 +10,13 @@ This ensures a uniform and consistent approach to evaluating the results across 
 The use of consistent evaluation metrics provides a reliable and objective way to compare and analyze the results and provides a clear understanding of the impact of the proposed solution.
 
 \section{Definition of the experimental or verification protocol}
-Different experiments will be performed based on the reference model, with respect to the models shown in sections \ref{subsec:lstm} and \ref{subsec:cnn}.
+Different experiments were performed based on the reference model, with respect to the models shown in sections \ref{subsec:lstm} and \ref{subsec:cnn}.
 
-In both cases the data will be extracted and selected as described in section \ref{subsub:refwork-siena-exp}.
+In both cases the data was extracted and selected as described in section \ref{subsub:refwork-siena-exp}.
 
-In order to reduce variance in the results linked to the scarcity of data (specifically in the patient specific and inter-patient approaches) the results will be evaluated using nested k-fold cross validations and leave-one-patient-out systems as needed.
+In order to reduce variance in the results linked to the scarcity of data (specifically in the patient specific and inter-patient approaches) the results were evaluated using nested k-fold cross validations and leave-one-patient-out systems as needed.
 
-Nested cross-validation is a method used to evaluate the performance of a machine learning model. The procedure involves dividing the dataset into multiple folds, which are used for both training the model and testing its performance. Unlike regular cross-validation, in nested cross-validation, the test set is rotated over the entire dataset, ensuring that the model's performance is evaluated on the entire dataset. This helps to avoid overfitting, as it provides a better overview of the model's performance across the entire data. Nested cross-validation is commonly used to both tune the hyperparameters of a model and compare and select models for a given dataset \cite{jacopo_repossi_tutorial_2022}. A scheme is shown in Fig. \ref{fig:nested-crossval}.
+Nested cross-validation is a method used to evaluate the performance of a machine learning model. The procedure involves dividing the dataset into multiple folds, which are used for both training the model and testing its performance. Unlike regular cross-validation, in nested cross-validation, the test set is rotated over the entire dataset, ensuring that the model's performance is evaluated on the entire dataset. This helps to avoid overfitting, as it provides a better overview of the model's performance across the entire data. Nested cross-validation is commonly used to both tune the hyper-parameters of a model and compare and select models for a given dataset \cite{jacopo_repossi_tutorial_2022}. A scheme is shown in Fig. \ref{fig:nested-crossval}.
 
 \begin{figure}[ht]
     \centering
@@ -25,7 +25,7 @@ Nested cross-validation is a method used to evaluate the performance of a machin
     \label{fig:nested-crossval}
 \end{figure}
 
-The results will be then compared with the state-of-art results shown in section \ref{subsec:refwork-siena} and then evaluated with respect to the constraints established in the equations \ref{eq:app-constraints}.
+The results will then be compared with the state-of-art results shown in section \ref{subsec:refwork-siena} and evaluated with respect to the constraints established in the equations \ref{eq:app-constraints}.
 
 \subsection{LSTM Autoencoder} \label{subsec:lstm-exp}
 After data extraction and selection, the data will be processed as described in section \ref{subsub:refwork-uab-featext}.
@@ -202,7 +202,7 @@ In this case the average $spec\%$ was 98.8\%, which is higher than the 98.0\% fr
 
 The average $t_p^m$ is about 1419 seconds, which is definitely enough time for the patient to adopt safety measures for the incoming epileptic seizure.
 
-The average $\overline{t}_w\%$ and the average $t_w^M$ are respectively 1428\% and 2064\%, highlighting the immense differences between the prediction times and the \gls{IFP}, thus making the system simply unusable.
+The average $\overline{t}_w\%$ and the average $t_w^M\%$ are respectively 1428\% and 2064\%, highlighting the immense differences between the prediction times and the \gls{IFP}, thus making the system simply unusable.
 
 \begin{table}[ht]
     \centering
@@ -323,7 +323,7 @@ In Table \ref{tab:patient-generic-99.8perc-lstm-instance} the results of an othe
 
 The average $spec\%$ is even lower, but the resulting increase in the average $perc\%$ is still not enough to reach the patient specific's average $pred\%$ (97.9\% in patient generic with 99.8th percentile vs 39.0\% in patient specific).
 
-Overall in the three patient generic results analyzed, only the 100th percentile ones had improvements on the $\overline{t}_w$ and $t_w^M$, but the close-to-zero average $pred\%$ makes them not worth considering. The 99.9th and 99.8th percentile, instead, are comparatively worse all across the board.
+Overall in the three patient generic results analyzed, only the 100th percentile ones had improvements on the $\overline{t}_w\%$ and $t_w^M\%$, but the close-to-zero average $pred\%$ makes them not worth considering. The 99.9th and 99.8th percentile, instead, are comparatively worse all across the board.
 
 It is also clear that the analysis with lower values of the percentiles is statistically biased, in that it relies on observations on the test set. Being presented only for illustration purposes, it's deemed incorrect to even consider improving the models that produced those results, therefore they will not be used as starting point for the inter-patient approach.
 
@@ -367,7 +367,7 @@ The average $pred\%$ is about 39.5\%, which is pretty close to the average $pred
 
 Note that even tho the both the $pred\%$ and $spec\%$ difference in values is 0.5\%, the variation in the second case is considered to be significant for two reasons: as stated before the training has to maximize $spec\%$, making the relative improvements way more appreciated, and slight increases of $spec\%$ when close to 100\% lead to far higher values of $IFP$.
 
-Also the values of $\overline{t}_w$ and $t_w^M$ are worse, at respectively 1950\% and 2761\% compared to 1428\% and 2064\% for the patient specific case.
+Also the values of $\overline{t}_w\%$ and $t_w^M\%$ are worse, at respectively 1950\% and 2761\% compared to 1428\% and 2064\% for the patient specific case.
 
 Despite the fact that the patient specific results are closer to the inter-patient ones than the patient generic, the inter-patient results are still objectively worse. Improvements may be achieved by varying the fine-tuning techniques.
 
@@ -407,7 +407,7 @@ Despite the fact that the patient specific results are closer to the inter-patie
 
 In Table \ref{tab:reset-inter-patient-lstm-instance} the results are presented for the inter-patient where the source model is fully fine-tuned after resetting the parameters in the last layer.
 
-The average $pred\%$ is 36.9 and the average $spec\%$ is 98.3. Also the $\overline{t}_w\%$ and $t_w^M$  of 1974\% are 2697\% are pretty similar to the previous scenario. Overall, only the $pred\%$ is slightly lower, meaning that this approach did not lead to noticeable improvements, if any.
+The average $pred\%$ is 36.9 and the average $spec\%$ is 98.3. Also the $\overline{t}_w\%$ and $t_w^M\%$  of 1974\% are 2697\% are pretty similar to the previous scenario. Overall, only the $pred\%$ is slightly lower, meaning that this approach did not lead to noticeable improvements, if any.
 
 \begin{table}[ht]
     \centering
@@ -445,7 +445,7 @@ The average $pred\%$ is 36.9 and the average $spec\%$ is 98.3. Also the $\overli
 
 In Table \ref{tab:decoder-inter-patient-lstm-instance} the results are presented for the inter-patient where the parameters for the layers in the first half of the source model, which is to say the encoder part, are frozen; the second half of the source model is instead fine-tuned as usual.
 
-The average $pred\%$ is 36.5, the average $spec\%$ is 98.3, the $\overline{t}_w\%$ and $t_w^M$ are 1997\% and 2740\%.
+The average $pred\%$ is 36.5, the average $spec\%$ is 98.3, the $\overline{t}_w\%$ and $t_w^M\%$ are 1997\% and 2740\%.
 
 Just like the previous case, also this time the results are close without any noticeable improvement.
 
@@ -455,7 +455,7 @@ Finally, the results of the \gls{OC-SVM} training is reported in Table \ref{tab:
 
 Even if the hyper-parameters were optimized to maximize the specificity, only an average value of about 96.3\% is reached, but the $pred\%$ is far higher the one presented in Table \ref{tab:patient-specific-lstm-instance} (76.7\% vs 39.0\%).
 
-Despite the average $spec\%$ being substantially lower than the patient specific case presented before, thanks to the bigger \gls{WD}, the $\overline{t}_w\%$ is still comparable, at a value of 1701\%. The same can not be stated for $t_w^M$,  with a value of 2936\%.
+Despite the average $spec\%$ being substantially lower than the patient specific case presented before, thanks to the bigger \gls{WD}, the $\overline{t}_w\%$ is still comparable, at a value of 1701\%. The same can not be stated for $t_w^M\%$,  with a value of 2936\%.
 
 \begin{table}[ht]
     \centering
@@ -507,7 +507,7 @@ Now a more transversal analysis will be presented, taking into account the singl
 \end{figure}
 In Fig. \ref{fig:boxplot_spec} the comparison for $spec\%$ is shown. The top performers are the \gls{LSTM} based models, while the the \gls{CNN} \gls{OC-SVM} one falls even behind the reference works. Among those reference works, the specificity from the UNISA's patient specific work is the best, with comparable results from the \gls{UNISI} one.
 
-It should be noted that the difference between the \gls{LSTM} based systems and the other ones is less significant than what appears at a glance, because its applicability is conditioned by the \gls{WD} and \gls{WO} values: as stated, to higher values of \gls{WD} with the same $spec\%$ correspond higher values of \gls{IFP}, therefore increasing the $\overline{t}_w\%$ and $t_w^M$ which are, ultimately, the values to optimize.
+It should be noted that the difference between the \gls{LSTM} based systems and the other ones is less significant than what appears at a glance, because its applicability is conditioned by the \gls{WD} and \gls{WO} values: as stated, to higher values of \gls{WD} with the same $spec\%$ correspond higher values of \gls{IFP}, therefore increasing the $\overline{t}_w\%$ and $t_w^M\%$ which are, ultimately, the values to optimize.
 
 For reference, every system that is \gls{LSTM} based has a \gls{WD} of 2 seconds, while the others use a \gls{WD} of 6 seconds.
 
@@ -562,7 +562,7 @@ Finally, a summary of the metrics which are most interesting for real-life appli
 \begin{table}[ht]
     \centering
     \begin{tabular}{c|rrrrr}
-    Model.  & $pred\%$ & IFP & $t_p^m$  & $\overline{t}_w$  & $t_w^M$   \\ \hline
+    Model.  & $pred\%$ & $IFP$ & $t_p^m$  & $\overline{t}_w\%$  & $t_w^M\%$   \\ \hline
     PS           & 39   & 162   & 1419  & 1428     & 2064     \\
     PG (100\%)   & 5    & 474   & 3887  & 823      & 825      \\
     PG (99.9\%)  & 13   & 104   & 2327  & 2786     & 3452     \\
@@ -579,27 +579,27 @@ Finally, a summary of the metrics which are most interesting for real-life appli
     \label{tab:real-life-comparison} 
 \end{table}
 
-Among the reference works, arguably the best results are reached by \gls{UNISA}'s patient specific work: with maximum values of $pred\%$ and lowest $t_w^M$, also has acceptable values of $t_p^m$ to allow the user to hypothetically adopt safety measures when warned. Despite being the best, this system is still unusable because of its $\overline{t}_w$ and $t_w^M$, whose values approach the 100\% mark which is two orders of magnitude higher then the upper bound of 1\% pointed at in the constraints.
+Among the reference works, arguably the best results are reached by \gls{UNISA}'s patient specific work: with maximum values of $pred\%$ and lowest $t_w^M\%$, also has acceptable values of $t_p^m$ to allow the user to hypothetically adopt safety measures when warned. Despite being the best, this system is still unusable because of its $\overline{t}_w\%$ and $t_w^M\%$, whose values approach the 100\% mark which is two orders of magnitude higher then the upper bound of 1\% pointed at in the constraints.
 
-On the other hand, the worst reference work is the patient generic \gls{UNISA} one, with values of  $\overline{t}_w$ and $t_w^M$ well over the 100\% mark and lower values of $pred\%$.
+On the other hand, the worst reference work is the patient generic \gls{UNISA} one, with values of  $\overline{t}_w\%$ and $t_w^M\%$ well over the 100\% mark and lower values of $pred\%$.
 
 Every reference work is still substantially better than all the developed systems.
 
-It's hard to univocally point at the best model among those developed: while the \gls{CNN} \gls{OC-SVM} system reaches the best $pred\%$, best values of  $\overline{t}_w$ and $t_w^M$ are obtained by the 100th percentile patient generic one. However, when coupled with their relative values of $pred\%$ the best models appear to be the patient specific \gls{LSTM} based one with the lowest value of $t_w^M$ and the \gls{CNN} \gls{OC-SVM} one for its high $pred\%$, followed by the inter-patient ones for their values of $\overline{t}_w$.
+It's hard to univocally point at the best model among those developed: while the \gls{CNN} \gls{OC-SVM} system reaches the best $pred\%$, best values of  $\overline{t}_w\%$ and $t_w^M\%$ are obtained by the 100th percentile patient generic one. However, when coupled with their relative values of $pred\%$ the best models appear to be the patient specific \gls{LSTM} based one with the lowest value of $t_w^M\%$ and the \gls{CNN} \gls{OC-SVM} one for its high $pred\%$, followed by the inter-patient ones for their values of $\overline{t}_w\%$.
 
 \section{Evaluation of the significance of the results obtained and of the improvements that can be made}
-While seizure detection is, practically, a solved problem, as also shown in the Chapter \ref{cpt:state-of-art}, not many attempts have been made towards applying unsupervised anomaly detection techniques to this task. Furthermore, the best of those few attempts achieve quite lower results, as shown in section \ref{subsec:refwork-uab}.
+While seizure detection is, practically, a solved problem, as also shown in Chapter \ref{cpt:state-of-art}, not many attempts have been made towards applying unsupervised anomaly detection techniques to this task. Furthermore, the best of those few attempts achieve quite lower results, as shown in section \ref{subsec:refwork-uab}.
 
-On the other hand, seizure prediction is much of an harder problem, with state-of-art techniques that aim to improve the everyday life of the patients, but still inevitably fail to produce usable systems.
+On the other hand, seizure prediction is a significantly harder problem, with state-of-art techniques that aim to improve the everyday life of the patients, but still inevitably fail to produce usable systems.
 
 At this point it is expected that the application of unsupervised anomaly detection techniques on seizure prediction would yield far worse results, being those techniques already unsuitable for similar, but even easier, tasks.
 
-In spite of those unpromising assumptions, the worth of trying resides in the meaningfulness of an eventual success in the application of unsupervised anomaly detection techniques to the task of seizure prediction: as of the current state-of-art, an initial gathering of seizure instance data is mandatory, but in order to do so weeks or even months would be necessary for each patient, and that is also not taking into account the specialized medical assistance needed to gather and label those extremely long recordings. If unsupervised anomaly detection turned out to be a viable solution, the initial setup phase would require just a couple of days, and could be carried out autonomously by the patients themselves.
+In spite of those unpromising assumptions, the value of trying resides in the meaningfulness of an eventual success in the application of unsupervised anomaly detection techniques to the task of seizure prediction: as of the current state-of-art, an initial gathering of seizure instance data is mandatory, but in order to do so weeks or even months would be necessary for each patient, and that is also not taking into account the specialized medical assistance needed to gather and label those extremely long recordings. If unsupervised anomaly detection turned out to be a viable solution, the initial setup phase would require just a couple of days, and could be carried out autonomously by the patients themselves.
 
-In the end of the analysis it is abundantly clear that the use of unsupervised anomaly detection in this reference field is \textit{not} feasible: different training approaches have been employed, such as patient specific, patient generic and inter-patient, and it was also combined with more general supervised techniques, but better results seem to be unachievable. One of the reason for such poor performance is the impossibility of enforcing a fixed preictal time during training in unsupervised scenarios, thus leading the anomaly detector to trigger as soon as an instance intrinsically anomalous is submitted: as shown in section \ref{subsec:seizure-phases}, the preictal phase is detectable as soon as 90 minutes before the seizure.
+In the end of the analysis it is abundantly clear that the use of unsupervised anomaly detection in this reference field is \textit{not} feasible: different training approaches have been employed, such as patient specific, patient generic and inter-patient, and unsupervised anomaly detection was also combined with more general supervised techniques, but better results seem to be unachievable. One of the reasons for such poor performance is the impossibility of enforcing a fixed preictal time during training in unsupervised scenarios, thus leading the anomaly detector to trigger as soon as an instance intrinsically anomalous is submitted: as shown in section \ref{subsec:seizure-phases}, the preictal phase is detectable as soon as 90 minutes before the seizure.
 
 Some useful conclusion on this topic can still be made by looking at the results: the best approach is the patient specific, as also suggested by its dominance in the state-of-art, meaning that every patient has a unique manifestation of incoming seizure patterns and relative intensity, which is also confirmed by scientific literature.
 
 In future, a system could be developed for each specific subset of patients that share the same premonitory seizure patterns, carrying out some sort of semi-supervised training which, during the first phase, would include the identification of the belonging group for that patient. One of the problems of patient specific approaches is the lack of data for the single patient, while the patient generic approach suffers from heterogeneity in seizure manifestation. This semi-supervised idea could make more data available for training while substantially limiting such variance in seizure and preictal instances.
 
-More in general, other architectures could be tested, such as the nowadays prominent transformer which has the innate advantage of being scalable with computational power, but at the moment the amount of data in free datasets is not sufficient for taking advantage of this feature. This means that before any substantial improvement can be made, more - and possibily more specifically labeled - data must become available in the form of public datasets.
+More in general, other architectures could be tested, such as the nowadays prominent transformer which has the innate advantage of being scalable with computational power, but at the moment the amount of data in free datasets is not sufficient for taking advantage of this feature. This means that before any substantial improvement can be made, more - and possibly more specifically labeled - data must become available in the form of public datasets.

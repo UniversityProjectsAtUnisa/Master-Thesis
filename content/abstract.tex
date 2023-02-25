@@ -2,35 +2,38 @@
 \subsubsection{Description of the problem}
 Epilepsy is a common neurological disorder that affects approximately 50 million people, according to the World Health Organization. Treatments exist but are not always effective depending on the patient and may have serious drawbacks. One of the most significant consequences of living with epilepsy is the risk of injury or death due to seizures.
 
-For this reason, the development of an automatic system for predicting epileptic seizures and warn the patient in advance is a topic of high interest in recent years. Unfortunately, the state-of-art solutions assume the availability of seizure recordings, but are substantially harder to gather than normal brain activity recordings. Unsupervised deep anomaly detection is a technique that is used in other fields that are characterized by an analogous imbalance of data and difficulty in gathering instances belonging to the minority class, because deep neural networks are trained only on normal instances and are able to detect incoming anomalies. 
+For this reason, the development of an automatic system for predicting epileptic seizures and warn the patient in advance is a topic of high interest in recent years. Unfortunately, the state-of-art solutions assume the availability of seizure recordings, but are substantially harder to gather than normal brain activity recordings. Unsupervised deep anomaly detection is a technique that is used in other fields that are characterized by an analogous imbalance of data and difficulty in gathering instances belonging to the minority class, being deep neural networks are trained only on normal instances and are able to detect incoming anomalies. 
 
 Therefore, the goal of this thesis is to determine whether the seizure prediction system can be developed using unsupervised deep anomaly detection techniques.
 
 
 \subsubsection{Contextualization of the study within the contemporary technical scenario}
-Gathering seizure EEG recordings is a tedious and time consuming task, requiring weeks, if not months, for each patient. This compromises the application of regular supervised training techniques for predicting seizures in real-life scenarios. As of today, the problem has mainly been faced with traditional techniques for feature extraction and classification. Works on seizure prediction leveraging deep neural networks are few and conditioned by lack of big publicly available datasets. Furthermore, not even the state-of-art results are good enough to be used to improve the everyday life of patients affected by epilepsy.
+Gathering seizure EEG recordings is a tedious and time consuming task, requiring weeks, if not months, for each patient. This compromises the application of regular supervised training techniques for predicting seizures in real-life scenarios. 
+
+As of today, the problem has mainly been faced with traditional techniques for feature extraction and classification. Works on seizure prediction leveraging deep neural networks are scarce and conditioned by the lack of big publicly available datasets. Unfortunately, not even the state-of-art results are good enough to be used to improve the everyday life of patients affected by epilepsy.
 
 Anomaly detection is not a new approach: it has successfully been employed in many fields such as risk management, security, and medical care. Deep anomaly detection is a type of anomaly detection that leverages deep learning to address various challenges such as the handling of data that is high-dimensional and not-independent. 
-In the last couple of years, researches are being conducted using unsupervised deep anomaly detection for seizure \textit{detection}, but the achieved performance are much lower than those achieved with supervised training in the same domain. There haven't been studies on the application of unsupervised anomaly detection techniques on epileptic seizure prediction.
+In the last couple of years, researches have been conducted using unsupervised deep anomaly detection for seizure \textit{detection}, showing its potential to some extent. 
+
+That said, there haven't been studies on the application of unsupervised anomaly detection techniques on epileptic seizure prediction.
 
 
 
 \subsubsection{Personal contribution of the candidate to the solution of the problem described}
-In this study, unsupervised deep anomaly detection techniques are applied and the results are compared to state-of-art works using supervised techniques.
+In this study, unsupervised deep anomaly detection techniques are applied and the results are compared to state-of-art results obtained using supervised techniques.
+
 Three reference works were identified: the first one achieves state-of-art results using traditional techniques for feature extraction and classification on the task of seizure prediction; the second one uses the same evaluation framework, reaching state-of-art performance with deep convolutional neural networks; the last one uses unsupervised deep anomaly detection on the task of seizure \textit{detection}.
 
-The architectures from the last two works were adjusted to perform unsupervised deep anomaly detection and are used to face the problem of seizure prediction according to different approaches that represent real life situations: patient specific, where the system is trained from scratch only on the data extracted from the single patient; patient generic, where the system is pre-trained on data from many patient in which the patient at hand is not included; inter-patient where the patient generic system is fine-tuned to better fit the specific data of the current patient. Most of the research uses patient specific approaches and connection to real-life scenario are never mentioned.
+The architectures from the last two were adjusted to perform unsupervised deep anomaly detection and were used to face the problem of seizure prediction according to different approaches that resemble real-life situations: patient specific, where the system is trained from scratch only on the data extracted from the single patient; patient generic, where the system is pre-trained on data from many patients in which the patient at hand is not included; inter-patient where the patient generic system is fine-tuned to better fit the specific data of the current patient. Most of the research uses patient specific approaches and connection to real-life scenario are never mentioned.
 
-Finally, some new evaluation metrics and constraints are defined to better represent the applicability of the obtained systems in real-life scenarios.
-
-The results are then compared to those obtained by the first two reference works.
+Finally, new heuristic evaluation metrics and constraints are defined to better represent the applicability of the obtained systems in real-life scenarios and the results are then compared to those obtained by the first two reference works.
 
 
 \subsubsection{Description of the application/experimental contents of the thesis}
-The proposed application is a binary detection system that uses various preprocessing techniques to obtain temporal or spectral representations of the EEG, various architectures of deep learning models and classifiers. This system can detect preictal (anomalous) samples on EEG with a specific set of 21 lead configuration of 23 electrodes from the International 10-20 system and was tested on data from the CHB-MIT dataset comprising data from 24 patients suffering from epilepsy of which 23 are children.
+The proposed application is a binary detection system that uses various preprocessing techniques to obtain temporal or spectral representations of the EEG, various architectures of deep learning models and classifiers. This system can detect preictal (anomalous) samples on EEG with a specific set of 21 lead configuration of 23 electrodes from the International 10-20 system and was tested on data from the CHB-MIT dataset comprising data from 24 patients suffering from epilepsy 23 of which are children.
 
 The experimental protocol includes the use of cross-validations, nested cross-validation and leave-one-patient-out cross-validation depending on the method on submission of the data to the deep learning models during the training phase, such as patient specific, patient generic and inter-patient.
 
-Some of the metrics are the same used in the reference works, while others are defined in this study and can be derived by those provided in the other works, making the results available and comparable.
+Some of the metrics are the same used in the reference works, while others heuristics defined in this study can still be derived from the results provided by the latter, making the results available and comparable.
 
-Although the implemented systems analyzes the data with a sliding window, the focus of the evaluation is directed at predicting incoming seizures with criteria specifically engineered for this task, while the detection of the single window is of less interest.
+Although the implemented systems analyzes the data with a sliding window, the focus of the evaluation is directed at the overall prediction of incoming seizures with criteria specifically engineered for this task, whereas the outcome of detection of the single window is of less interest.

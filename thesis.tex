@@ -75,9 +75,13 @@
 % \cleardoublepage
 % \thispagestyle{empty}
 
-\ringraziamenti % acknowledgements
+% \ringraziamenti % acknowledgements
+\afterpage{%
+\thispagestyle{empty}
 \input{content/acknowledgements}
+}
 
+\paginavuota
 \paginavuota
 \tableofcontents
 
